@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import { Navigate } from 'react-router';
+import { useNavigate } from "react-router-dom";
+
 
 class AddContacts extends React.Component {
     state ={
@@ -8,21 +9,24 @@ class AddContacts extends React.Component {
         email: '',
         phone:''
     }
+    
     handleInput = (e) =>{
         this.setState({[e.target.name]:e.target.value});
-    }
-    saveContact = async (e) => {
+    }      
+        saveContact = async (e) => {
         e.preventDefault();
         //console.log(this.state);
+        
        const result =  await axios.post('/contact', this.state);
        this.setState({fullName: '', email: '',phone:''});
        if(result.data.status === 200){
-         //  alert('Herek');
-           //Navigate('/');
+        window.location.href = '/';
        }
   
     }
+    
     render(){
+        
         return(
             <div>
                 <form onSubmit={this.saveContact}>

@@ -5421,8 +5421,8 @@ var AddContacts = /*#__PURE__*/function (_React$Component) {
                   phone: ''
                 });
 
-                if (result.data.status === 200) {//  alert('Herek');
-                  //Navigate('/');
+                if (result.data.status === 200) {
+                  window.location.href = '/';
                 }
 
               case 6:
