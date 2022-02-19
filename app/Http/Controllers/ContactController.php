@@ -44,7 +44,9 @@ class ContactController extends Controller
             'email' => $request->email
         ]);
         if($result){
-            return response()->json('contact saved');
+            return response()->json([
+                'status' => 200
+            ]);
         }
         
     }

@@ -5373,6 +5373,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var AddContacts = /*#__PURE__*/function (_React$Component) {
   _inherits(AddContacts, _React$Component);
 
@@ -5413,9 +5414,18 @@ var AddContacts = /*#__PURE__*/function (_React$Component) {
 
               case 3:
                 result = _context.sent;
-                console.log(result);
 
-              case 5:
+                _this.setState({
+                  fullName: '',
+                  email: '',
+                  phone: ''
+                });
+
+                if (result.data.status === 200) {//  alert('Herek');
+                  //Navigate('/');
+                }
+
+              case 6:
               case "end":
                 return _context.stop();
             }

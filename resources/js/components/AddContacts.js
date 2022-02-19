@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Navigate } from 'react-router';
 
 class AddContacts extends React.Component {
     state ={
@@ -14,7 +15,12 @@ class AddContacts extends React.Component {
         e.preventDefault();
         //console.log(this.state);
        const result =  await axios.post('/contact', this.state);
-       console.log(result);
+       this.setState({fullName: '', email: '',phone:''});
+       if(result.data.status === 200){
+         //  alert('Herek');
+           //Navigate('/');
+       }
+  
     }
     render(){
         return(
