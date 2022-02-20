@@ -5,6 +5,7 @@ import Nav from './Nav';
 import Contacts from './Contacts';
 import AddContacts from './AddContacts';
 import './app.css';
+import EditContact from './EditContact';
 
 
 function Example() {

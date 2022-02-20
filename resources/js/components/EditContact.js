@@ -15,12 +15,15 @@ class EditContact extends React.Component {
     updateContact = async (e) => {
         e.preventDefault();
     }
-    
+    async componentDidMount(){
+        const id = this.props.match.prams.id;
+        const result = axios.get(`/contact/${id}/edit`);
+        console.log(result);
+    }
     render(){
-        
         return(
             <div>
-                <form onSubmit={this.saveContact}>
+                <form onSubmit={this.updateContact}>
                     <div className='form-group'>
                         <input type='text' name='fullName' className='form-control'
                         value={this.state.fullName} onChange={this.handleInput} placeholder='Full Name' required/>
@@ -36,7 +39,7 @@ class EditContact extends React.Component {
                         value={this.state.phone} onChange={this.handleInput} placeholder='Phone'required/>
                     </div>
                     <input type='submit'  className='btn btn-primary'
-                        value='Add Contact' />
+                        value='Edit Contact' />
 
                 </form>
             </div>

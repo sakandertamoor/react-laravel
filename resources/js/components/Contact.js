@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 class Contact extends React.Component {
@@ -25,8 +27,8 @@ class Contact extends React.Component {
                             {contact.phone}
                        </div>
                        <div className='col-md-2'>
-                           <button className='btn btn-warning'> Edit
-                           </button>
+                           <Link className='btn btn-warning' to={`/edit/${contact.id}`}> Edit
+                           </Link>
                        </div>
                        <div className='col-md-2'>
                            <button className='btn btn-danger'> Delete
