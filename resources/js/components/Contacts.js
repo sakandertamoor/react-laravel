@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-
+import Contact from './contact';
 
 class Contacts extends React.Component {
     state ={
@@ -27,7 +27,11 @@ class Contacts extends React.Component {
         }
         return(
             <div>
-                <h1>Contacts Directory</h1>
+            {this.state.contacts.map(
+                contact => (
+                    <Contact contact = {contact} key = {contact.id} />   
+                )
+            )}
             </div>
         )
     }
