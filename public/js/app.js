@@ -5693,6 +5693,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var EditContact = /*#__PURE__*/function (_React$Component) {
   _inherits(EditContact, _React$Component);
 
@@ -5752,11 +5753,15 @@ var EditContact = /*#__PURE__*/function (_React$Component) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                id = this.props.match.prams.id;
-                result = axios__WEBPACK_IMPORTED_MODULE_2___default().get("/contact/".concat(id, "/edit"));
-                console.log(result);
+                id = this.props.match.params.id;
+                console.log(id, 'asd');
+                _context2.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/contact/".concat(id, "/edit"));
 
-              case 3:
+              case 4:
+                result = _context2.sent;
+
+              case 5:
               case "end":
                 return _context2.stop();
             }

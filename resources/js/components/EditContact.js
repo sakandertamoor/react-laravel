@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 
 class EditContact extends React.Component {
@@ -16,9 +17,10 @@ class EditContact extends React.Component {
         e.preventDefault();
     }
     async componentDidMount(){
-        const id = this.props.match.prams.id;
-        const result = axios.get(`/contact/${id}/edit`);
-        console.log(result);
+       const id = this.props.match.params.id;
+        console.log(id, 'asd');
+        const result = await axios.get(`/contact/${id}/edit`);
+        //console.log(result);
     }
     render(){
         return(
